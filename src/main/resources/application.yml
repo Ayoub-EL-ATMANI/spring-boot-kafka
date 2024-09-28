@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: spring-boot-kafka
+  kafka:
+    bootstrap-servers: kafka:9092  # Kafka broker address
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer  # Key serializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer  # Value serializer
+    consumer:
+      group-id: my-group  # Consumer group ID
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer  # Key deserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer  # Value deserializer
+      auto-offset-reset: earliest  # Start consuming from the earliest message
